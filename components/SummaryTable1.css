@@ -1,0 +1,70 @@
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+}
+
+.table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 1rem; 
+    align-items: center;
+    line-height: 1.6;
+    background-color: #ffffff; /* White background for better contrast */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow due to rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.table .headerCell {
+    background-color: #007bff !important; /* Bright blue background */
+    color: white !important;
+    text-align: center !important;
+    padding: 12px !important;
+    font-size: 20px !important;
+    border-bottom: 2px solid #0056b3 !important; /* Darker border for the header */
+}
+
+.table .rowHeader {
+    background-color: #f0f8ff !important; /* Light blue for row headers */
+    text-align: center !important;
+    padding: 12px !important;
+    font-size: 18px !important; 
+    border-right: 1px solid #dee2e6 !important; /* Border for separation */
+    color: #333 !important; /* Dark text color */
+    font-weight: bold !important;
+}
+
+.table .cell {
+    text-align: center !important;
+    padding: 12px !important;
+    border-bottom: 1px solid #dee2e6 !important; 
+    color: #555 !important; /* Medium grey text color */
+    font-weight: bold !important;
+
+}
+
+.table th,
+.table td {
+    border: 1px solid #dee2e6 !important; 
+}
+
+.table .cell:hover {
+    background-color: #e2e6ea !important; /* Light grey background on hover */
+    color: #333 !important; /* Darker text color on hover */
+}
+
+.table .rowHeader:hover {
+    background-color: #d1ecf1 !important; /* Light teal on hover for row headers */
+    color: #0c5460 !important; /* Darker teal text color on hover */
+}
+
+.table .cell:hover, .table .rowHeader:hover {
+    transition: background-color 0.3s ease, color 0.3s ease !important; /* Smooth transition for hover effects */
+}
+
+  

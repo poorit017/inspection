@@ -1,95 +1,106 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import SummaryTable1 from '../components/SummaryTable1';
+import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <Head>
+        <title>ทะเบียนผู้ที่ได้รับการรับรอง</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+
+      {/* Full-width section with container-fluid */}
+      <div className="container">
+        {/* Header Section */}
+        <h2 className="text-center">
+          <div className="headerleft">ผลการรับรองมาตรฐานข้าวคุณภาพ</div>
+        </h2>
+      </div>
+
+      {/* Summary Table Section - Limited width with container */}
+      <div className="container">
+        <div className="col-md-12">
+          <SummaryTable1 />
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* Group Certification Section */}
+      <div className="container">
+        <h2 className="text-center">
+          <div className="header">ทะเบียนผู้ที่ได้รับการรับรอง</div>
+        </h2>
+
+        <div className="row">
+          {/* GAP Certification Card */}
+          <div className="col-md-6">
+            <div className="card">
+              <Image className="card-img-top" src="/img/GAP.png" alt="GAP Image" width={500} height={300} />
+              <div className="card-body">
+                <h3 className="card-title">มาตรฐานข้าว GAP</h3>
+                <Link href="/GAP/groupinfo" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>
+                <Link href="/GAP/gapsum" className="btn btn-info">สรุปทะเบียนได้รับการรับรอง</Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Organic Rice Certification Card */}
+          <div className="col-md-6">
+            <div className="card">
+              <Image className="card-img-top" src="/img/ORG.png" alt="Organic Rice Image" width={500} height={300} />
+              <div className="card-body">
+                <h3 className="card-title">มาตรฐานข้าวอินทรีย์</h3>
+                <Link href="/ORG/groupinfo" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>
+                <Link href="/ORG/orgsum" className="btn btn-info">สรุปทะเบียนได้รับการรับรอง</Link>
+              </div>
+            </div>
+          </div>
+
+          {/* GAPSEED Certification Card */}
+          <div className="col-md-6">
+            <div className="card">
+              <Image className="card-img-top" src="/img/GAPSEED.jpg" alt="GAPSEED Image" width={500} height={300} />
+              <div className="card-body">
+                <h3 className="card-title">มาตรฐานเมล็ดพันธุ์ข้าว (GAPSEED)</h3>
+                <Link href="/GAPSEED/groupinfo" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>
+                <Link href="/GAPSEED/gapseedsum" className="btn btn-info">สรุปทะเบียนได้รับการรับรอง</Link>
+              </div>
+            </div>
+          </div>
+
+          {/* GMP Certification Card */}
+          <div className="col-md-6">
+            <div className="card">
+              <Image className="card-img-top" src="/img/GMP.png" alt="GMP Image" width={500} height={300} />
+              <div className="card-body">
+                <h3 className="card-title">มาตรฐานโรงสีข้าว GMP</h3>
+                <Link href="#" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>
+                <Link href="#" className="btn btn-info">สรุปทะเบียนได้รับการรับรอง</Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Q Certification Card */}
+          <div className="col-md-6">
+            <div className="card">
+              <Image className="card-img-top" src="/img/Q.png" alt="Q Image" width={500} height={300} />
+              <div className="card-body">
+                <h3 className="card-title">มาตรฐานสินค้าข้าว Q</h3>
+                <Link href="#" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>
+                <Link href="#" className="btn btn-info">สรุปทะเบียนได้รับการรับรอง</Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      {/* Full-width Footer */}
+      <div className="container-fluid p-0">
+        <Footer />
       </div>
-    </main>
+    </div>
   );
 }

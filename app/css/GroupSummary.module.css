@@ -1,0 +1,107 @@
+.container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+
+}
+
+.centered {
+    text-align: center;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #007bff; 
+    text-shadow: 0 0 3px #3c8b45, 0 0 5px #ffffff; 
+  }
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.table, .tableSticky {
+    background-color: #fff; /* Solid white background */
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.table th, .table td, .tableSticky th, .tableSticky td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.table thead th {
+    background-color: #0059ff;
+    color: #ddd;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.summaryRow {
+    background-color: #3a3a3a;
+    font-weight: bold;
+    text-align: center;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    color: #fff;
+}
+
+.totalLabel {
+    background-color: #cccccc;
+    text-align: center;
+    font-size: 18px;
+    vertical-align: middle;
+    border-right: 2px solid #333;
+    padding: 10px;
+    color: #000;
+}
+
+.backButton {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+    background-color: #45a049;
+    cursor: pointer;
+}
+
+.tableSticky thead th {
+    position: sticky;
+    top: 0;
+    z-index: 3; /* Ensure headers stay above other content */
+    background-color: #0059ff; /* Same blue color */
+    color: #ddd;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.tableSticky thead tr:nth-child(2) th {
+    position: sticky;
+    top: 35px; /* Adjust this based on the height of the first header row */
+    z-index: 2; /* Ensure the second row stays on top */
+    background-color: #0059ff; /* Same blue color */
+    color: #ddd;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
