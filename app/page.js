@@ -42,7 +42,7 @@ export default function Home() {
               <div className="card-body">
                 <h3 className="card-title">มาตรฐานข้าว GAP</h3>
                 <Link href="/GAP/groupinfo" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>
-                <Link href="/GAP/gapsum" className="btn btn-info">สรุปทะเบียนได้รับการรับรอง</Link>
+                <Link href="/GAP/gapsum" className="btn btn-info" >สรุปทะเบียนได้รับการรับรอง</Link>
               </div>
             </div>
           </div>
