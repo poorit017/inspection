@@ -7,14 +7,14 @@
     margin-bottom: 20px;
     font-size: 36px;
     font-weight: bold;
-    color: #007bff; 
+    color: #000; 
     text-shadow: 0 0 3px #3c8b45, 0 0 5px #ffffff; 
   }
   .subhead {
     font-size: 24px;
     font-weight: bold;
-    color: #007bff; 
-    text-shadow: 0 0 3px #3c8b45, 0 0 5px #ffffff;
+    color: #000; 
+    text-shadow: 0 0 3px #9bc7a0, 0 0 5px #ffffff;
   }
   .table {
     width: 100%;
@@ -50,7 +50,7 @@
     background-color: #4CAF50;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    
     text-align: center;
   }
   

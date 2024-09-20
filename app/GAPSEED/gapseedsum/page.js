@@ -88,18 +88,18 @@ const GroupSummary = () => {
                         <th colSpan="4" className={styles.centered}>ข้อมูลทะเบียนไม่ผ่าน</th>
                     </tr>
                     <tr>
-                        <th>กลุ่ม</th>
-                        <th>ราย</th>
-                        <th>แปลง</th>
-                        <th>ไร่</th>
-                        <th>กลุ่ม</th>
-                        <th>ราย</th>
-                        <th>แปลง</th>
-                        <th>ไร่</th>
-                        <th>กลุ่ม</th>
-                        <th>ราย</th>
-                        <th>แปลง</th>
-                        <th>ไร่</th>
+                        <th className={styles.centered}>กลุ่ม</th>
+                        <th className={styles.centered}>ราย</th>
+                        <th className={styles.centered}>แปลง</th>
+                        <th className={styles.centered}>ไร่</th>
+                        <th className={styles.centered}>กลุ่ม</th>
+                        <th className={styles.centered}>ราย</th>
+                        <th className={styles.centered}>แปลง</th>
+                        <th className={styles.centered}>ไร่</th>
+                        <th className={styles.centered}>กลุ่ม</th>
+                        <th className={styles.centered}>ราย</th>
+                        <th className={styles.centered}>แปลง</th>
+                        <th className={styles.centered}>ไร่</th>
                     </tr>
                 </thead>
                 <tbody>

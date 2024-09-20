@@ -15,7 +15,7 @@
     margin-bottom: 20px;
     font-size: 36px;
     font-weight: bold;
-    color: #007bff; 
+    color: #000;; 
     text-shadow: 0 0 3px #3c8b45, 0 0 5px #ffffff; 
   }
 
@@ -104,4 +104,14 @@
     color: #ddd;
     padding: 12px;
     border: 1px solid #ddd;
+}
+.table tbody tr:hover,
+.tableSticky tbody tr:hover {
+    background-color: #f1f1f1; /* Light gray background color on hover */
+    color: #000;
+}
+
+.tableSticky tbody tr:hover {
+    background-color: #e0e0e0; /* Slightly different gray for sticky table rows */
+    color: #000;
 }

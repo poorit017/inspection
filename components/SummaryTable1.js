@@ -43,10 +43,11 @@ const SummaryTable1 = () => {
         fetchData();
     }, []);
 
-    const formatNumber = (number) => {
-        return parseFloat(number).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const formatNumber = (number, options = { minimumFractionDigits: 0, maximumFractionDigits: 0 }) => {
+        return parseFloat(number).toLocaleString(undefined, options);
     };
-
+    
+    
     return (
         <div className="container">
             <h3>
@@ -69,41 +70,41 @@ const SummaryTable1 = () => {
                             <td className="cell">{formatNumber(data.gap2566_group_results.total_passed_groups)}</td>
                             <td className="cell">{formatNumber(data.gap2566_group_results.total_passed_members)}</td>
                             <td className="cell">{formatNumber(data.gap2566_group_results.total_passed_plots)}</td>
-                            <td className="cell">{formatNumber(data.gap2566_group_results.total_passed_acres)}</td>
+                            <td className="cell">{formatNumber(data.gap2566_group_results.total_passed_acres, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                         </tr>
                         <tr>
                             <th className="rowHeader">ORG</th>
                             <td className="cell">{formatNumber(data.gaporg_results.total_passed_groups)}</td>
                             <td className="cell">{formatNumber(data.gaporg_results.total_passed_members)}</td>
                             <td className="cell">{formatNumber(data.gaporg_results.total_passed_plots)}</td>
-                            <td className="cell">{formatNumber(data.gaporg_results.total_passed_acres)}</td>
+                            <td className="cell">{formatNumber(data.gaporg_results.total_passed_acres, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                         </tr>
                         <tr>
                             <th className="rowHeader">SEED</th>
                             <td className="cell">{formatNumber(data.gapseed_results.total_passed_groups)}</td>
                             <td className="cell">{formatNumber(data.gapseed_results.total_passed_members)}</td>
                             <td className="cell">{formatNumber(data.gapseed_results.total_passed_plots)}</td>
-                            <td className="cell">{formatNumber(data.gapseed_results.total_passed_acres)}</td>
+                            <td className="cell">{formatNumber(data.gapseed_results.total_passed_acres, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                         </tr>
                         <tr>
                             <th className="rowHeader">GMP</th>
-                            <td className="cell">0.00</td>
-                            <td className="cell">0.00</td>
-                            <td className="cell">0.00</td>
+                            <td className="cell">0</td>
+                            <td className="cell">0</td>
+                            <td className="cell">0</td>
                             <td className="cell">0.00</td>
                         </tr>
                         <tr>
                             <th className="rowHeader">Q</th>
-                            <td className="cell">0.00</td>
-                            <td className="cell">0.00</td>
-                            <td className="cell">0.00</td>
+                            <td className="cell">0</td>
+                            <td className="cell">0</td>
+                            <td className="cell">0</td>
                             <td className="cell">0.00</td>
                         </tr>
                         <tr>
                             <th className="rowHeader">ข้าวพันธ์ุแท้</th>
-                            <td className="cell">0.00</td>
-                            <td className="cell">0.00</td>
-                            <td className="cell">0.00</td>
+                            <td className="cell">0</td>
+                            <td className="cell">0</td>
+                            <td className="cell">0</td>
                             <td className="cell">0.00</td>
                         </tr>
                     </tbody>

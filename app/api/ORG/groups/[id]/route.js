@@ -22,7 +22,8 @@ export async function GET(req, { params }) {
         group_district, 
         group_province, 
         group_leader, 
-        group_leader_phone
+        group_leader_phone,
+        Certification_file
       FROM 
         \`groupinfo\` 
       WHERE 

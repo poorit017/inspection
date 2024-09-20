@@ -157,7 +157,7 @@ const GroupInfo = () => {
         {filteredGroups.length > 0 ? (
         filteredGroups.map((group, index) => (
         <tr key={group.group_id}>
-        <td className={styles.centered}>{group.group_id}</td>
+        <td className={styles.centered}>{index+1}</td>
         <td>
           <Link href={`/ORG/groupinfo/${group.group_id}`}>
             <span className={styles.link}>{group.group_name}</span>

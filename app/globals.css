@@ -20,7 +20,7 @@ body {
   text-align: center;
   font-size: 30px;
   font-weight: bold;
-  color: #007bff; 
+  color: #000; 
   text-shadow: 0 0 3px #3c8b45, 0 0 5px #ffffff; 
 }
 .headerleft {
@@ -28,7 +28,7 @@ body {
   text-align: left;
   font-size: 30px;
   font-weight: bold;
-  color: #007bff;
+  color: #000;
   text-shadow: 0 0 3px #3c8b45, 0 0 5px #ffffff; 
 }
 
