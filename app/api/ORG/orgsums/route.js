@@ -17,6 +17,8 @@ SELECT
     g.group_name,
     g.group_district,
     g.group_province,
+    g.certification_code,
+    g.Certification_file, 
     COUNT(DISTINCT p.member) AS member_count,
     COUNT(p.plot) AS total_plots,
     SUM(p.planting_area) AS total_acres,

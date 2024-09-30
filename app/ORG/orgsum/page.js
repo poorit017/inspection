@@ -33,46 +33,46 @@ const GroupSummary = () => {
     const totalFailedPlots = summaryData.reduce((total, group) => total + group.failed_plots, 0);
     const totalFailedAcres = summaryData.reduce((total, group) => total + parseFloat(group.failed_acres), 0);
     const totalRows = summaryData.length;
-    
+
 
     return (
         <div className={styles.container}>
             <h1 className={styles.heading}>สรุปข้อมูลทะเบียนผู้ที่ได้รับการรับรองมาตรฐานข้าวอินทรีย์</h1>
             {error && <p className={styles.error}>Error: {error}</p>}
             <table className={`${styles.table} table table-bordered`}>
-    <thead>
-        <tr>
-            <th></th>
-            <th>กลุ่ม</th>
-            <th>ราย</th>
-            <th>แปลง</th>
-            <th>ไร่</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th className={styles.centered}>เป้าหมาย</th>
-            <td className={styles.centered}>{totalRows.toLocaleString()}</td>
-            <td className={styles.centered}>{totalMemberCount.toLocaleString()}</td>
-            <td className={styles.centered}>{totalPlots.toLocaleString()}</td>
-            <td className={styles.centered}>{totalAcres.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-        </tr>
-        <tr>
-            <th className={styles.centered}>ผ่าน</th>
-            <td className={styles.centered}>{totalPassedGroup.toLocaleString()}</td>
-            <td className={styles.centered}>{totalPassedMembers.toLocaleString()}</td>
-            <td className={styles.centered}>{totalPassedPlots.toLocaleString()}</td>
-            <td className={styles.centered}>{totalPassedAcres.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-        </tr>
-        <tr>
-            <th className={styles.centered}>ไม่ผ่าน</th>
-            <td className={styles.centered}>{totalFailedGroup.toLocaleString()}</td>
-            <td className={styles.centered}>{totalFailedMembers.toLocaleString()}</td>
-            <td className={styles.centered}>{totalFailedPlots.toLocaleString()}</td>
-            <td className={styles.centered}>{totalFailedAcres.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-        </tr>
-    </tbody>
-</table>    
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>กลุ่ม</th>
+                        <th>ราย</th>
+                        <th>แปลง</th>
+                        <th>ไร่</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th className={styles.centered}>เป้าหมาย</th>
+                        <td className={styles.centered}>{totalRows.toLocaleString()}</td>
+                        <td className={styles.centered}>{totalMemberCount.toLocaleString()}</td>
+                        <td className={styles.centered}>{totalPlots.toLocaleString()}</td>
+                        <td className={styles.centered}>{totalAcres.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                    </tr>
+                    <tr>
+                        <th className={styles.centered}>ผ่าน</th>
+                        <td className={styles.centered}>{totalPassedGroup.toLocaleString()}</td>
+                        <td className={styles.centered}>{totalPassedMembers.toLocaleString()}</td>
+                        <td className={styles.centered}>{totalPassedPlots.toLocaleString()}</td>
+                        <td className={styles.centered}>{totalPassedAcres.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                    </tr>
+                    <tr>
+                        <th className={styles.centered}>ไม่ผ่าน</th>
+                        <td className={styles.centered}>{totalFailedGroup.toLocaleString()}</td>
+                        <td className={styles.centered}>{totalFailedMembers.toLocaleString()}</td>
+                        <td className={styles.centered}>{totalFailedPlots.toLocaleString()}</td>
+                        <td className={styles.centered}>{totalFailedAcres.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                    </tr>
+                </tbody>
+            </table>
             <Link href="/">
                 <button className={styles.backButton}>กลับไปหน้าแรก</button>
             </Link>
@@ -107,8 +107,24 @@ const GroupSummary = () => {
                         <tr key={group.group_id}>
                             <td className={styles.centered}>{index + 1}</td>
                             <td>
-                                <Link href={`/ORG/groupinfo/${group.group_id}`} passHref>
-                                    <span className={styles.link}>{group.group_name}</span>
+                                <Link href={`/GAPSEED/groupinfo/${group.group_id}`}>
+                                    <span className={styles.link}>
+                                        {group.group_name}
+                                        {group.Certification_file && group.Certification_file.trim() !== "-" && (
+                                            <>
+                                                {group.certification_code !== '-' && (
+                                                    <span className={styles.certIcon} title="มีใบประกาศ">
+                                                        <img src="../img/certification.png" alt="มีใบประกาศ" className={styles.iconSmall} />
+                                                    </span>
+                                                )}
+                                                {group.certification_code === '-' && (
+                                                    <span className={styles.certIcon} title="มีใบประกาศแต่ไม่ผ่านการรับรอง">
+                                                        <img src="../img/noncert.png" alt="มีใบประกาศแต่ไม่ผ่านการรับรอง" className={styles.iconSmall} />
+                                                    </span>
+                                                )}
+                                            </>
+                                        )}
+                                    </span>
                                 </Link>
                             </td>
                             <td className={styles.centered}>{group.group_district}</td>
@@ -127,8 +143,6 @@ const GroupSummary = () => {
                             <td className={styles.centered}>{group.failed_acres.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                         </tr>
                     ))}
-
-                    {/* Summary Row */}
                     <tr className={styles.summaryRow}>
                         <td rowSpan="2" colSpan="4" className={styles.totalLabel}>รวม</td>
                         <td>{totalRows.toLocaleString()}</td>

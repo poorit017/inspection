@@ -51,7 +51,7 @@ const GroupInfo = () => {
       }
     }
 
-    filtered = filtered.filter(group => 
+    filtered = filtered.filter(group =>
       group.Group_name.toLowerCase().includes(searchName.toLowerCase()) &&
       searchSummary.includes(group.Summary)
     );
@@ -90,7 +90,7 @@ const GroupInfo = () => {
           <button className={styles.backButton}>กลับไปหน้าแรก</button>
         </Link>
       </div>
-      
+
       {error && <p>Error: {error}</p>}
 
       <div className={styles.searchContainer}>
@@ -101,9 +101,9 @@ const GroupInfo = () => {
           onChange={(e) => setSearchName(e.target.value)}
           className={styles.searchInput}
         />
-        <select 
-          value={searchProvince} 
-          onChange={(e) => setSearchProvince(e.target.value)} 
+        <select
+          value={searchProvince}
+          onChange={(e) => setSearchProvince(e.target.value)}
           className={styles.searchInput}
         >
           <option value="">เลือกจังหวัด</option>
@@ -113,18 +113,18 @@ const GroupInfo = () => {
             </option>
           ))}
         </select>
-        <select 
-        value={searchDistrict} 
-        onChange={(e) => setSearchDistrict(e.target.value)} 
-        className={styles.searchInput}
-        disabled={!searchProvince}  // Disable if no province is selected
+        <select
+          value={searchDistrict}
+          onChange={(e) => setSearchDistrict(e.target.value)}
+          className={styles.searchInput}
+          disabled={!searchProvince}  // Disable if no province is selected
         >
-        <option value="">เลือกอำเภอ</option>
-        {filteredDistricts.map((district, index) => (
-        <option key={index} value={district}>
-        {district}
-        </option>
-        ))}
+          <option value="">เลือกอำเภอ</option>
+          {filteredDistricts.map((district, index) => (
+            <option key={index} value={district}>
+              {district}
+            </option>
+          ))}
         </select>
         <div className={styles.checkboxContainer}>
           <label>
@@ -155,7 +155,6 @@ const GroupInfo = () => {
             <th>ชื่อกลุ่ม</th>
             <th>อำเภอ</th>
             <th>จังหวัด</th>
-            <th>จำนวนสมาชิก(คน)</th>
           </tr>
         </thead>
         <tbody>
@@ -165,12 +164,27 @@ const GroupInfo = () => {
                 <td className={styles.centered}>{index + 1}</td>
                 <td>
                   <Link href={`/GAP/groupinfo/${group.Group_id}`}>
-                    <span className={styles.link}>{group.Group_name}</span>
+                    <span className={styles.link}>
+                      {group.Group_name}
+                      {group.Certification_file && group.Certification_file.trim() !== "" && (
+                        <>
+                          {group.Summary === 'ผ่าน' && (
+                            <span className={styles.certIcon} title="มีใบประกาศ">
+                              <img src="../img/certification.png" alt="มีใบประกาศ" className={styles.iconSmall} />
+                            </span>
+                          )}
+                          {group.Summary === 'ไม่ผ่าน' && (
+                            <span className={styles.certIcon} title="มีใบประกาศแต่ไม่ผ่านการรับรอง">
+                              <img src="../img/noncert.png" alt="มีใบประกาศแต่ไม่ผ่านการรับรอง" className={styles.iconSmall} />
+                            </span>
+                          )}
+                        </>
+                      )}
+                    </span>
                   </Link>
                 </td>
                 <td>{group.Group_district}</td>
                 <td>{group.Group_province}</td>
-                <td className={styles.centered}>{group.max_member_id}</td>
               </tr>
             ))
           ) : (

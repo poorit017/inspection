@@ -38,7 +38,8 @@ export default function Home() {
           {/* GAP Certification Card */}
           <div className="col-md-6">
             <div className="card">
-              <Image className="card-img-top" src="/img/GAP.png" alt="GAP Image" width={500} height={300} />
+              <Image className="card-img-top" src="/img/GAP.png" alt="GAP Image" width={500} height={300} 
+              style={{ width: 'auto', height: 'auto' }}/>
               <div className="card-body">
                 <h3 className="card-title">มาตรฐานข้าว GAP</h3>
                 <Link href="/GAP/groupinfo" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>
@@ -50,7 +51,8 @@ export default function Home() {
           {/* Organic Rice Certification Card */}
           <div className="col-md-6">
             <div className="card">
-              <Image className="card-img-top" src="/img/ORG.png" alt="Organic Rice Image" width={500} height={300} />
+              <Image className="card-img-top" src="/img/ORG.png" alt="Organic Rice Image" width={500} height={300} 
+              style={{ width: 'auto', height: 'auto' }}/>
               <div className="card-body">
                 <h3 className="card-title">มาตรฐานข้าวอินทรีย์</h3>
                 <Link href="/ORG/groupinfo" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>
@@ -62,9 +64,10 @@ export default function Home() {
           {/* GAPSEED Certification Card */}
           <div className="col-md-6">
             <div className="card">
-              <Image className="card-img-top" src="/img/GAPSEED.jpg" alt="GAPSEED Image" width={500} height={300} />
+              <Image className="card-img-top" src="/img/GAPSEED.jpg" alt="GAPSEED Image" width={500} height={300} 
+              style={{ width: 'auto', height: 'auto' }}/>
               <div className="card-body">
-                <h3 className="card-title">มาตรฐานเมล็ดพันธุ์ข้าว (GAPSEED)</h3>
+                <h3 className="card-title">มาตรฐานเมล็ดพันธุ์ข้าว</h3>
                 <Link href="/GAPSEED/groupinfo" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>
                 <Link href="/GAPSEED/gapseedsum" className="btn btn-info">สรุปทะเบียนได้รับการรับรอง</Link>
               </div>
@@ -74,7 +77,8 @@ export default function Home() {
           {/* GMP Certification Card */}
           <div className="col-md-6">
             <div className="card">
-              <Image className="card-img-top" src="/img/GMP.png" alt="GMP Image" width={500} height={300} />
+              <Image className="card-img-top" src="/img/GMP.png" alt="GMP Image" width={500} height={300} 
+              style={{ width: 'auto', height: 'auto' }}/>
               <div className="card-body">
                 <h3 className="card-title">มาตรฐานโรงสีข้าว GMP</h3>
                 <Link href="#" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>
@@ -86,7 +90,8 @@ export default function Home() {
           {/* Q Certification Card */}
           <div className="col-md-6">
             <div className="card">
-              <Image className="card-img-top" src="/img/Q.png" alt="Q Image" width={500} height={300} />
+              <Image className="card-img-top" src="/img/Q.png" alt="Q Image" width={500} height={300} 
+              style={{ width: 'auto', height: 'auto' }}/>
               <div className="card-body">
                 <h3 className="card-title">มาตรฐานสินค้าข้าว Q</h3>
                 <Link href="#" className="btn btn-primary">ค้นหาผู้ที่ได้รับการรับรอง</Link>

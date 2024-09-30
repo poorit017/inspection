@@ -84,34 +84,61 @@
     cursor: pointer;
 }
 
+.tableSticky {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    font-size: 18px;
+    white-space: normal;
+}
+
 .tableSticky thead th {
     position: sticky;
     top: 0;
-    z-index: 3; /* Ensure headers stay above other content */
-    background-color: #0059ff; /* Same blue color */
+    z-index: 3; /* ให้อยู่ด้านบนสุด */
+    background-color: #0059ff; /* สีพื้นหลัง */
     color: #ddd;
+    border: 2px solid white; /* เส้นขอบเป็นสีขาว */
     padding: 12px;
-    border: 1px solid #ddd;
     font-size: 22px;
     font-weight: bold;
+    box-shadow: none; /* เอาเงาภายในออก */
+}
+
+.tableSticky thead th + th {
+    border-left: 2px solid #fff; /* เส้นขอบระหว่างคอลัมน์ */
+}
+
+.tableSticky tbody tr td {
+    border: 1px solid #ddd; /* ขอบของเซลล์ข้อมูล */
+    padding: 12px;
+    font-size: 14px;
 }
 
 .tableSticky thead tr:nth-child(2) th {
     position: sticky;
-    top: 35px; /* Adjust this based on the height of the first header row */
-    z-index: 2; /* Ensure the second row stays on top */
-    background-color: #0059ff; /* Same blue color */
-    color: #ddd;
+    top: 55px; /* ปรับตามความสูงของ header แถวแรก */
+    z-index: 2; 
+    background-color: #0059ff; 
+    border: 2px solid #fff; 
+    height: 40px; /* กำหนดความสูงที่แน่นอน */
     padding: 12px;
-    border: 1px solid #ddd;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 40px; /* ให้ข้อความอยู่กลางเมื่อใช้ height */
 }
-.table tbody tr:hover,
-.tableSticky tbody tr:hover {
-    background-color: #f1f1f1; /* Light gray background color on hover */
-    color: #000;
-}
+
 
 .tableSticky tbody tr:hover {
     background-color: #e0e0e0; /* Slightly different gray for sticky table rows */
     color: #000;
 }
+.certIcon {
+    margin-left: 5px; /* เพิ่มระยะห่างระหว่างชื่อและไอคอน */
+  }
+  
+  .iconSmall {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle; /* ให้ไอคอนอยู่แนวเดียวกับข้อความ */
+  }

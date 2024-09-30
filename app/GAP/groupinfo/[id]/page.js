@@ -33,17 +33,31 @@ const GroupPage = ({ params }) => {
     <div className={styles.container}>
       <h1 className={styles.heading}>ชื่อกลุ่ม: {group.Group_name}</h1>
       <div className={styles.subhead}>
-      <p >บ้านเลขที่: {group.Group_house_number}</p>
-      <p>หมู่บ้าน: {group.Group_village}</p>
-      <p>ตำบล: {group.Group_sub_district}</p>
-      <p>อำเภอ: {group.Group_district}</p>
-      <p>จังหวัด: {group.Group_province}</p>
-      <p>หัวหน้ากลุ่ม: {group.Group_leader}</p>
-      <p>เบอร์โทรหัวหน้ากลุ่ม: {group.Group_leader_phone}</p>
+        <div className={styles.infoSection}>
+          <p>บ้านเลขที่: {group.Group_house_number}</p>
+          <p>หมู่บ้าน: {group.Group_village}</p>
+          <p>ตำบล: {group.Group_sub_district}</p>
+          <p>อำเภอ: {group.Group_district}</p>
+          <p>จังหวัด: {group.Group_province}</p>
+          <p>หัวหน้ากลุ่ม: {group.Group_leader}</p>
+          <p>เบอร์โทรหัวหน้ากลุ่ม: {group.Group_leader_phone}</p>
+        </div>
+        <div className={styles.certificationSection}>
+          <p>สถานะการรับรอง: {group.Summary === "ผ่าน" ? "ผ่านการรับรอง" : "ไม่ผ่านการรับรอง"}</p>
+          <p>
+            {group.Certification_code1 !== "-" && group.Certification_code2 !== "-"
+              ? `รหัสการรับรอง: ${group.Certification_code1}, ${group.Certification_code2}`
+              : group.Certification_code1 !== "-"
+                ? `รหัสการรับรอง: ${group.Certification_code1}`
+                : group.Certification_code2 !== "-"
+                  ? `รหัสการรับรอง: ${group.Certification_code2}`
+                  : null}
+          </p>
+        </div>
       </div>
       {group.Certification_file && (
         <a
-          href={`/GAP/Certification_file/${(group.Certification_file)}`}
+          href={`/GAP/Certification_file/${group.Certification_file}`}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.backButton}
@@ -51,8 +65,6 @@ const GroupPage = ({ params }) => {
           ดูไฟล์การรับรอง
         </a>
       )}
-
-
       <h2 className={styles.subhead}>สมาชิกในกลุ่ม</h2>
       <table className={styles.table}>
         <thead>

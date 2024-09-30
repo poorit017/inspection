@@ -17,6 +17,8 @@ export async function GET() {
                 g.group_name,
                 g.district,
                 g.province,
+                g.Certification_file,
+                g.certification_code,
                 COUNT(DISTINCT p.member) AS member_count,
                 COUNT(p.plot) AS total_plots,
                 SUM(p.area) AS total_acres,

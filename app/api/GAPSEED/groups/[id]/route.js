@@ -28,6 +28,7 @@ export async function GET(request, { params }) {
         first_name, 
         last_name, 
         phone,
+        certification_code,
         Certification_file
       FROM 
         group_info 

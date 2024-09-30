@@ -11,27 +11,41 @@
     text-shadow: 0 0 3px #3c8b45, 0 0 5px #ffffff; 
   }
   .subhead {
+    display: flex;
+    justify-content: flex-start; /* Centers the items horizontally */
+    margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
     color: #000; 
     text-shadow: 0 0 3px #9bc7a0, 0 0 5px #ffffff;
-  }
+    white-space: nowrap; /* Prevents line breaks */
+}
+
+.certificationSection {
+    margin: 0 50 px; /* Adjusts the space between sections */
+}
+
+
+
   .table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
   }
-  
+
   .table th, .table td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: center;
     font-weight: bold;
+    text-align: center;
   }
   
   .table th {
     background-color: #4CAF50;
     color: white;
+    position: sticky;
+    top: 0; /* ติดที่ด้านบนเมื่อเลื่อน */
+    z-index: 2; /* ทำให้หัวตารางอยู่เหนือข้อมูล */
   }
   .table td {
     background-color: white;
@@ -41,7 +55,7 @@
   .centered {
     text-align: center;
   }
-  
+
   .backButton {
     display: inline-block;
     margin-top: 20px;
@@ -50,7 +64,6 @@
     background-color: #4CAF50;
     color: white;
     text-decoration: none;
-    
     text-align: center;
   }
   

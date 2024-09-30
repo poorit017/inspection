@@ -17,7 +17,8 @@ export async function GET() {
         g.district, 
         g.province, 
         MAX(p.member) AS max_member_id,
-        g.certification_code
+        g.certification_code,
+        g.Certification_file
       FROM 
         \`group_info\` g
       LEFT JOIN 

@@ -23,6 +23,7 @@ export async function GET(req, { params }) {
         group_province, 
         group_leader, 
         group_leader_phone,
+        certification_code,
         Certification_file
       FROM 
         \`groupinfo\` 

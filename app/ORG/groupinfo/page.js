@@ -150,30 +150,44 @@ const GroupInfo = () => {
             <th>ชื่อกลุ่ม</th>
             <th>อำเภอ</th>
             <th>จังหวัด</th>
-            <th>จำนวนสมาชิก(คน)</th>
           </tr>
         </thead>
         <tbody>
-        {filteredGroups.length > 0 ? (
-        filteredGroups.map((group, index) => (
-        <tr key={group.group_id}>
-        <td className={styles.centered}>{index+1}</td>
-        <td>
-          <Link href={`/ORG/groupinfo/${group.group_id}`}>
-            <span className={styles.link}>{group.group_name}</span>
-          </Link>
-        </td>
-        <td>{group.group_district}</td>
-        <td>{group.group_province}</td>
-        <td>{group.max_member_id}</td>
-      </tr>
-    ))
-  ) : (
-    <tr>
-      <td colSpan="5" className={styles.noData}>ไม่มีข้อมูลที่ค้นหา</td>
-    </tr>
-  )}
-</tbody>
+          {filteredGroups.length > 0 ? (
+            filteredGroups.map((group, index) => (
+              <tr key={group.group_id}>
+                <td className={styles.centered}>{index + 1}</td>
+                <td>
+                  <Link href={`/GAPSEED/groupinfo/${group.group_id}`}>
+                    <span className={styles.link}>
+                      {group.group_name}
+                      {group.Certification_file && group.Certification_file.trim() !== "-" && (
+                        <>
+                          {group.certification_code !== '-' && (
+                            <span className={styles.certIcon} title="มีใบประกาศ">
+                              <img src="../img/certification.png" alt="มีใบประกาศ" className={styles.iconSmall} />
+                            </span>
+                          )}
+                          {group.certification_code === '-' && (
+                            <span className={styles.certIcon} title="มีใบประกาศแต่ไม่ผ่านการรับรอง">
+                              <img src="../img/noncert.png" alt="มีใบประกาศแต่ไม่ผ่านการรับรอง" className={styles.iconSmall} />
+                            </span>
+                          )}
+                        </>
+                      )}
+                    </span>
+                  </Link>
+                </td>
+                <td>{group.group_district}</td>
+                <td>{group.group_province}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="5" className={styles.noData}>ไม่มีข้อมูลที่ค้นหา</td>
+            </tr>
+          )}
+        </tbody>
 
       </table>
     </div>

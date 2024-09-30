@@ -51,8 +51,8 @@ const GroupInfo = () => {
         group.group_name.toLowerCase().includes(searchName.toLowerCase()) &&
         (searchProvince === '' || group.province.toLowerCase().includes(searchProvince.toLowerCase())) &&
         (searchDistrict === '' || group.district.toLowerCase().includes(searchDistrict.toLowerCase())) &&
-        ((searchSummary.includes('ผ่าน') && isPassed) || 
-         (searchSummary.includes('ไม่ผ่าน') && isFailed))
+        ((searchSummary.includes('ผ่าน') && isPassed) ||
+          (searchSummary.includes('ไม่ผ่าน') && isFailed))
       );
     });
     setFilteredGroups(filtered);
@@ -93,7 +93,7 @@ const GroupInfo = () => {
           <button className={styles.backButton}>กลับไปหน้าแรก</button>
         </Link>
       </div>
-      
+
       {error && <p>Error: {error}</p>}
 
       <div className={styles.searchContainer}>
@@ -104,9 +104,9 @@ const GroupInfo = () => {
           onChange={(e) => setSearchName(e.target.value)}
           className={styles.searchInput}
         />
-        <select 
-          value={searchProvince} 
-          onChange={handleProvinceChange} 
+        <select
+          value={searchProvince}
+          onChange={handleProvinceChange}
           className={styles.searchInput}
         >
           <option value="">เลือกจังหวัด</option>
@@ -116,9 +116,9 @@ const GroupInfo = () => {
             </option>
           ))}
         </select>
-        <select 
-          value={searchDistrict} 
-          onChange={(e) => setSearchDistrict(e.target.value)} 
+        <select
+          value={searchDistrict}
+          onChange={(e) => setSearchDistrict(e.target.value)}
           className={styles.searchInput}
           disabled={!searchProvince}  // Disable if no province is selected
         >
@@ -158,7 +158,6 @@ const GroupInfo = () => {
             <th>ชื่อกลุ่ม</th>
             <th>อำเภอ</th>
             <th>จังหวัด</th>
-            <th>จำนวนสมาชิก</th>
           </tr>
         </thead>
         <tbody>
@@ -168,12 +167,27 @@ const GroupInfo = () => {
                 <td className={styles.centered}>{index + 1}</td>
                 <td>
                   <Link href={`/GAPSEED/groupinfo/${group.group_id}`}>
-                    <span className={styles.link}>{group.group_name}</span>
+                    <span className={styles.link}>
+                      {group.group_name}
+                      {group.Certification_file && group.Certification_file.trim() !== "" && (
+                        <>
+                          {group.certification_code !== 'ไม่ผ่าน' && (
+                            <span className={styles.certIcon} title="มีใบประกาศ">
+                              <img src="../img/certification.png" alt="มีใบประกาศ" className={styles.iconSmall} />
+                            </span>
+                          )}
+                          {group.certification_code === 'ไม่ผ่าน' && (
+                            <span className={styles.certIcon} title="มีใบประกาศแต่ไม่ผ่านการรับรอง">
+                              <img src="../img/noncert.png" alt="มีใบประกาศแต่ไม่ผ่านการรับรอง" className={styles.iconSmall} />
+                            </span>
+                          )}
+                        </>
+                      )}
+                    </span>
                   </Link>
                 </td>
                 <td>{group.district}</td>
                 <td>{group.province}</td>
-                <td className={styles.centered}>{group.max_member_id}</td>
               </tr>
             ))
           ) : (

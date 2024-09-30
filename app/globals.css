@@ -66,6 +66,7 @@ body {
   height: 150px; /* Set a fixed height for card body */
   overflow: hidden; /* Hide overflow content */
   text-align: center; /* Center text */
+  margin-bottom: 20px;
 }
 
 
@@ -80,8 +81,7 @@ body {
   margin: 10px 5px; /* Add margin for buttons */
   padding: 10px 15px; /* Increase button padding */
   border-radius: 5px; /* Add rounded corners to buttons */
-  font-size: 16px; /* Increase button font size */
-  
+  font-size: 16px; /* Increase button font size */ 
 }
 
 .btn-primary, .btn-info {

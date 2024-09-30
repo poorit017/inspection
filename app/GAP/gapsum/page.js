@@ -109,10 +109,27 @@ const GroupSummary = () => {
                         <tr key={group.Group_id}>
                             <td className={styles.centered}>{index + 1}</td>
                             <td>
-                                <Link href={`/GAP/groupinfo/${group.Group_id}`} passHref>
-                                    <span className={styles.link}>{group.Group_name}</span>
+                                <Link href={`/GAP/groupinfo/${group.Group_id}`}>
+                                    <span className={styles.link}>
+                                        {group.Group_name}
+                                        {group.Certification_file && group.Certification_file.trim() !== "" && (
+                                            <>
+                                                {group.Summary === 'ผ่าน' && (
+                                                    <span className={styles.certIcon} title="มีใบประกาศ">
+                                                        <img src="../img/certification.png" alt="มีใบประกาศ" className={styles.iconSmall} />
+                                                    </span>
+                                                )}
+                                                {group.Summary === 'ไม่ผ่าน' && (
+                                                    <span className={styles.certIcon} title="มีใบประกาศแต่ไม่ผ่านการรับรอง">
+                                                        <img src="../img/noncert.png" alt="มีใบประกาศแต่ไม่ผ่านการรับรอง" className={styles.iconSmall} />
+                                                    </span>
+                                                )}
+                                            </>
+                                        )}
+                                    </span>
                                 </Link>
                             </td>
+
                             <td className={styles.centered}>{group.Group_district}</td>
                             <td className={styles.centered}>{group.Group_province}</td>
                             <td className={styles.centered}>{1}</td>

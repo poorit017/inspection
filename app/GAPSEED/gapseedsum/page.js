@@ -75,7 +75,7 @@ const GroupSummary = () => {
             <Link href="/">
                 <button className={styles.backButton}>กลับไปหน้าแรก</button>
             </Link>
-            
+
             <table className={`${styles.tableSticky} table table-bordered`}>
                 <thead>
                     <tr>
@@ -107,8 +107,24 @@ const GroupSummary = () => {
                         <tr key={group.group_id}>
                             <td className={styles.centered}>{index + 1}</td>
                             <td>
-                                <Link href={`/GAPSEED/groupinfo/${group.group_id}`} passHref>
-                                    <span className={styles.link}>{group.group_name}</span>
+                                <Link href={`/GAPSEED/groupinfo/${group.group_id}`}>
+                                    <span className={styles.link}>
+                                        {group.group_name}
+                                        {group.Certification_file && group.Certification_file.trim() !== "" && (
+                                            <>
+                                                {group.certification_code !== 'ไม่ผ่าน' && (
+                                                    <span className={styles.certIcon} title="มีใบประกาศ">
+                                                        <img src="../img/certification.png" alt="มีใบประกาศ" className={styles.iconSmall} />
+                                                    </span>
+                                                )}
+                                                {group.certification_code === 'ไม่ผ่าน' && (
+                                                    <span className={styles.certIcon} title="มีใบประกาศแต่ไม่ผ่านการรับรอง">
+                                                        <img src="../img/noncert.png" alt="มีใบประกาศแต่ไม่ผ่านการรับรอง" className={styles.iconSmall} />
+                                                    </span>
+                                                )}
+                                            </>
+                                        )}
+                                    </span>
                                 </Link>
                             </td>
                             <td className={styles.centered}>{group.district}</td>

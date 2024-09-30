@@ -24,6 +24,9 @@ export async function GET(req, { params }) {
         Group_postal_code,
         Group_leader, 
         Group_leader_phone,
+        Certification_code1,
+        Certification_code2,
+        Summary,
         Certification_file
       FROM 
         \`group\` 

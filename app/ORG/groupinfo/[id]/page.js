@@ -35,13 +35,21 @@ const GroupPage = ({ params }) => {
     <div className={styles.container}>
       <h1 className={styles.heading}>ชื่อกลุ่ม: {groupinfo.group_name}</h1>
       <div className={styles.subhead}>
-      <p>บ้านเลขที่: {groupinfo.group_house_number}</p>
-      <p>หมู่บ้าน: {groupinfo.group_address}</p>
-      <p>ตำบล: {groupinfo.group_subdistrict}</p>
-      <p>อำเภอ: {groupinfo.group_district}</p>
-      <p>จังหวัด: {groupinfo.group_province}</p>
-      <p>หัวหน้ากลุ่ม: {groupinfo.group_leader}</p>
-      <p>เบอร์โทรหัวหน้ากลุ่ม: {groupinfo.group_leader_phone}</p>
+        <div className={styles.infoSection}>
+          <p>บ้านเลขที่: {groupinfo.group_house_number}</p>
+          <p>หมู่บ้าน: {groupinfo.group_address}</p>
+          <p>ตำบล: {groupinfo.group_subdistrict}</p>
+          <p>อำเภอ: {groupinfo.group_district}</p>
+          <p>จังหวัด: {groupinfo.group_province}</p>
+          <p>หัวหน้ากลุ่ม: {groupinfo.group_leader}</p>
+          <p>เบอร์โทรหัวหน้ากลุ่ม: {groupinfo.group_leader_phone}</p>
+          </div>
+        <div className={styles.certificationSection}>
+          <p>สถานะการรับรอง: {groupinfo.certification_code === "-" ? "ไม่ผ่านการรับรอง" : "ผ่านการรับรอง"}</p>
+          {groupinfo.certification_code !== "-" && (
+            <p>รหัสรับรอง: {groupinfo.certification_code}</p>
+          )}
+        </div>
       </div>
       {groupinfo.Certification_file && (
         <a
@@ -55,6 +63,7 @@ const GroupPage = ({ params }) => {
       )}
       <h2 className={styles.subhead}>สมาชิกในกลุ่ม</h2>
       <table className={styles.table}>
+
         <thead>
           <tr>
             <th>ลำดับ</th>
@@ -98,7 +107,7 @@ const GroupPage = ({ params }) => {
         </tbody>
       </table>
       <Link href="/ORG/groupinfo" className={styles.backButton}>
-      ไปหน้ากลุ่ม
+        ไปหน้ากลุ่ม
       </Link>
       <Link href="/ORG/orgsum" className={styles.backButton}>
         ไปหน้าสรุปทะเบียน

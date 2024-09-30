@@ -29,24 +29,32 @@ const GroupPage = ({ params }) => {
   }, [id]);
 
   if (error) return <div>Error: {error}</div>;
-  if (!groupinfo) return 
+  if (!groupinfo) return
   <div className={styles.heading}>Loading...</div>;
 
-  
+
   const totalPlantedArea = plotinfo.reduce((total, member) => total + parseFloat(member.area || 0), 0);
-  
+
 
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>ชื่อกลุ่ม: {groupinfo.group_name}</h1>
       <div className={styles.subhead}>
-      <p>บ้านเลขที่: {groupinfo.group_no}</p>
-      <p>หมู่บ้าน: {groupinfo.moo}</p>
-      <p>ตำบล: {groupinfo.sub_district}</p>
-      <p>อำเภอ: {groupinfo.district}</p>
-      <p>จังหวัด: {groupinfo.province}</p>
-      <p>หัวหน้ากลุ่ม: {groupinfo.titie} {groupinfo.first_name} {groupinfo.last_name}</p>
-      <p>เบอร์โทรหัวหน้ากลุ่ม: {groupinfo.phone}</p>
+        <div className={styles.infoSection}>
+          <p>บ้านเลขที่: {groupinfo.group_no}</p>
+          <p>หมู่บ้าน: {groupinfo.moo}</p>
+          <p>ตำบล: {groupinfo.sub_district}</p>
+          <p>อำเภอ: {groupinfo.district}</p>
+          <p>จังหวัด: {groupinfo.province}</p>
+          <p>หัวหน้ากลุ่ม: {groupinfo.titie} {groupinfo.first_name} {groupinfo.last_name}</p>
+          <p>เบอร์โทรหัวหน้ากลุ่ม: {groupinfo.phone}</p>
+        </div>
+        <div className={styles.certificationSection}>
+          <p>สถานะการรับรอง: {groupinfo.certification_code === "ไม่ผ่าน" ? "ไม่ผ่านการรับรอง" : "ผ่านการรับรอง"}</p>
+          {groupinfo.certification_code !== "ไม่ผ่าน" && (
+            <p>รหัสรับรอง: {groupinfo.certification_code}</p>
+          )}
+        </div>
       </div>
       {groupinfo.Certification_file && (
         <a
@@ -58,7 +66,6 @@ const GroupPage = ({ params }) => {
           ดูไฟล์การรับรอง
         </a>
       )}
-      
       <h2 className={styles.subhead}>สมาชิกในกลุ่ม</h2>
       <table className={styles.table}>
         <thead>
@@ -73,7 +80,6 @@ const GroupPage = ({ params }) => {
             <th>จำนวนที่แปลง(ไร่)</th>
             <th>ผลตรวจแปลง</th>
             <th>หมายเหตุ</th>
-
           </tr>
         </thead>
         <tbody>
@@ -99,7 +105,7 @@ const GroupPage = ({ params }) => {
         </tbody>
       </table>
       <Link href="/GAPSEED/groupinfo" className={styles.backButton}>
-      ไปหน้ากลุ่ม
+        ไปหน้ากลุ่ม
       </Link>
       <Link href="/GAPSEED/gapseedsum" className={styles.backButton}>
         ไปหน้าสรุปทะเบียน

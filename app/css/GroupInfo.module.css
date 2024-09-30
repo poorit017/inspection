@@ -14,24 +14,28 @@
 
 .heading {
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 20px;
   font-size: 36px;
   font-weight: bold;
   color: #000;; 
   text-shadow: 0 0 3px #3c8b45, 0 0 5px #ffffff; 
 }
+.centered{
+  text-align: center;
+}
+
 .backButton {
   display: inline-block;
   margin-top: 20px;
+  margin-right: 10px;
   padding: 10px 20px;
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
   text-align: center;
-  transition: background-color 0.3s ease; /* Add this line */
+  white-space: nowrap;
 }
-
 
 .backButton:hover {
   background-color: #45a049;
@@ -52,29 +56,79 @@
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 16px; /* ขนาดฟ้อนต์ */
+  font-weight: bold;
+  font-family: 'Prompt', sans-serif; /* กำหนดฟ้อนต์ */
+  color: #333; /* สีข้อความ */
+  background-color: #f9f9f9; /* พื้นหลังของ input */
+  outline: none; /* เอาเส้นขอบสีฟ้าออกเวลา focus */
+  transition: border-color 0.3s ease; /* ใส่เอฟเฟกต์การเปลี่ยนสีขอบ */
 }
+
+.searchInput:focus {
+  border-color: #4caf50; /* เปลี่ยนสีขอบเมื่อ focus */
+}
+
+select.searchInput {
+  -webkit-appearance: none; /* ปิดการแสดงผลเริ่มต้นของเบราว์เซอร์ */
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #f9f9f9; /* พื้นหลังของ select */
+  padding: 10px;
+  font-size: 16px; /* ขนาดฟ้อนต์ของ select */
+  font-family: 'Prompt', sans-serif; /* กำหนดฟ้อนต์ของ select */
+  color: #333; /* สีของข้อความ */
+}
+
 
 .table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  white-space: nowrap;
 
 }
-
-.table th,
-.table td {
-  padding: 10px;
-  border: 1px solid #ddd;
-  text-align: left;
-  background-color: #ffff;
-}
-
 .table th {
+  align-items: center;
   background-color: #4caf50;
   color: white;
   position: sticky;
   top: 0;
   z-index: 2;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #ffff;
+}
+
+
+.checkboxContainer {
+  display: flex;
+  gap: 15px; /* Add space between checkboxes */
+  justify-content: center; /* Center the checkboxes */
+  align-items: center; /* Vertically align the checkboxes */
+  margin-top: 10px;
+}
+
+.checkboxContainer label {
+  font-family: 'Arial', sans-serif; /* กำหนดฟ้อนต์ */
+  font-size: 20px; /* ขนาดฟ้อนต์ */
+  font-weight: bold;
+  color: #333; /* สีข้อความ */
+  display: flex;
+  align-items: center; /* จัดเรียงข้อความกับช่องเลือกให้อยู่ในแนวเดียวกัน */
+}
+
+.checkboxContainer input[type="checkbox"] {
+  margin-right: 8px; /* Add space between checkbox and label */
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #4caf50; /* Modern browsers allow changing the checkbox color */
 }
 
 
@@ -87,4 +141,13 @@
 
 .link:hover {
   text-decoration: underline;
+}
+.certIcon {
+  margin-left: 5px; /* เพิ่มระยะห่างระหว่างชื่อและไอคอน */
+}
+
+.iconSmall {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle; /* ให้ไอคอนอยู่แนวเดียวกับข้อความ */
 }
