@@ -107,7 +107,7 @@ const GroupSummary = () => {
                         <tr key={group.group_id}>
                             <td className={styles.centered}>{index + 1}</td>
                             <td>
-                                <Link href={`/GAPSEED/groupinfo/${group.group_id}`}>
+                                <Link href={`/ORG/groupinfo/${group.group_id}`}>
                                     <span className={styles.link}>
                                         {group.group_name}
                                         {group.Certification_file && group.Certification_file.trim() !== "-" && (
