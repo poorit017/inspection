@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import SummaryTable1 from '../components/SummaryTable1';
+import SummaryTable2 from '../components/SummaryTable2';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -25,6 +26,9 @@ export default function Home() {
       <div className="container">
         <div className="col-md-12">
           <SummaryTable1 />
+        </div>
+        <div className="col-md-12">
+          <SummaryTable2 />
         </div>
       </div>
 
